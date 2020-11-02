@@ -5,7 +5,7 @@ jacoco:
   register:
     origin: "http://localhost:7070"
   application:
-    git: "https://github.com/wuzhenglin510/TestSingleModuleApplicationForJacocoCollector.git"
+    git: "https://github.com/Aunus/TestSingleModuleApplicationForJacocoCollector.git"
     name: "TestSingleModuleApplicationForJacocoCollector"
     host: "localhost"
     jacoco-port: 6300
