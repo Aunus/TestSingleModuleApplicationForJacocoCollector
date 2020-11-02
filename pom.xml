@@ -15,10 +15,10 @@
     </parent>
 
     <properties>
-<!--        todo register on SonarQube to get your application projectKey and login token -->
+        <!--        todo register on SonarQube to get your application projectKey and login token -->
         <sonar.host.url>http://localhost:9000</sonar.host.url>
         <sonar.projectKey>TestSingleModuleApplicationForJacocoCollector</sonar.projectKey>
-        <sonar.login>ce0feab0681a6a4298405733f80b2d822614c253</sonar.login>
+        <sonar.login>b073a45ad9b241a76dfb607c130da8e3a651bd26</sonar.login>
     </properties>
 
     <dependencies>
@@ -46,8 +46,29 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <executable>true</executable>
+                    <mainClass>com.wzl.jacoco.Application</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
