@@ -32,7 +32,9 @@ public class BookRepositoryController {
     public List<BookBasicInfo> listBooks() {
         log.info("我觉得我们需要加点什么功能在这里");
         List<BookStorageInfo> bookStorageInfos = BookRepository.listBookStorageInfo();
-        log.info("list_books");
+//        log.info("list_books");
+
+        log.info("list_books &  1");
         return bookStorageInfos.stream()
                 .map(item -> new BookBasicInfo(item.getBookName(), item.getStock()))
                 .collect(Collectors.toList());
