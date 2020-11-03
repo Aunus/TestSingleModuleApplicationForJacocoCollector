@@ -17,7 +17,7 @@ public class RentController {
 
     @PostMapping("borrow")
     public String borrowBook(@RequestParam String bookName, @RequestParam String borrower, @RequestParam Integer amount) {
-        log.info("borrow~");
+        log.info("borrow~test");
         BookRepository.borrowBook(bookName, borrower, amount);
         return String.format("you borrow book <<{}>> successfully at"
                 , bookName, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
