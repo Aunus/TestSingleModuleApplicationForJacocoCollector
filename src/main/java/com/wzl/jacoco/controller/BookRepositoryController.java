@@ -34,7 +34,7 @@ public class BookRepositoryController {
         List<BookStorageInfo> bookStorageInfos = BookRepository.listBookStorageInfo();
 //        log.info("list_books");
 
-        log.info("list_books &  1");
+        log.info("list_books &  8.2新增功能测试");
         return bookStorageInfos.stream()
                 .map(item -> new BookBasicInfo(item.getBookName(), item.getStock()))
                 .collect(Collectors.toList());
