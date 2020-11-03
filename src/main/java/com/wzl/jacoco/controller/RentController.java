@@ -17,7 +17,7 @@ public class RentController {
 
     @PostMapping("borrow")
     public String borrowBook(@RequestParam String bookName, @RequestParam String borrower, @RequestParam Integer amount) {
-        log.info("borrow &  8.2新增功能测试");
+        log.info("borrow~");
         BookRepository.borrowBook(bookName, borrower, amount);
         return String.format("you borrow book <<{}>> successfully at"
                 , bookName, LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));

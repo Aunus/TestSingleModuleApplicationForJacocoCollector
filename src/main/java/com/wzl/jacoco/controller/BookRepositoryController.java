@@ -19,6 +19,7 @@ public class BookRepositoryController {
 
     @GetMapping("get_book")
     public BookBasicInfo getBook(@RequestParam(value = "bookName") String bookName) {
+        log.info("get_book");
         BookStorageInfo bookStorageInfo = BookRepository.getBookStorageInfo(bookName);
         log.info("我觉得我们需要加点什么功能在这里");
         //我是注释啦啦啦
@@ -34,7 +35,7 @@ public class BookRepositoryController {
         List<BookStorageInfo> bookStorageInfos = BookRepository.listBookStorageInfo();
 //        log.info("list_books");
 
-        log.info("list_books &  8.2新增功能测试");
+        log.info("list_books");
         return bookStorageInfos.stream()
                 .map(item -> new BookBasicInfo(item.getBookName(), item.getStock()))
                 .collect(Collectors.toList());
